@@ -47,7 +47,7 @@ var  headers ={
         }
 
 gbk
-  .fetch('http://abc.com/gbk.html',null, header)
+  .fetch('http://abc.com/gbk.html',null, headers)
   .to('response', function(err,response){
     if (!err)
     console.log(response.body);
