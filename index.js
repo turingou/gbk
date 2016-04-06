@@ -22,12 +22,12 @@ function toBuffer(type, string) {
 }
 
 // fetch gbk page
-function fetch(url, charset) {
+function fetch(url, charset, headers) {
   if (!url || typeof(url) !== 'string') 
     throw new Error('url is not vaild');
 
   if (!(url.indexOf('http') == 0 || url.indexOf('https') == 0)) 
     throw new Error('url is not vaild');
 
-  return new page(url, charset);
+  return new page(url, charset, headers);
 }

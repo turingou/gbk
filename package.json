@@ -8,13 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/turingou/gbk.git"
+    "url": "git+https://github.com/turingou/gbk.git"
   },
   "keywords": [
     "gbk",
     "utf-8"
   ],
-  "author": "turingou",
+  "author": {
+    "name": "turingou"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/turingou/gbk/issues"
@@ -22,5 +24,13 @@
   "dependencies": {
     "request": "*",
     "iconv-lite": "*"
-  }
+  },
+  "gitHead": "a8a1a03123522bc689b10fb7fc939b3a5a92eff0",
+  "readme": "## GBK ![npm](https://badge.fury.io/js/gbk.png)\n\nConvert gbk to utf-8 made easy.\n\n### Installation\n\n```bash\n$ npm install gbk\n```\n\n### Example\n\nHigh level methods: \n\n```javascript\nvar gbk = require('gbk');\n\n// fetch a gbk-encoded html page and save it\ngbk\n  .fetch('http://abc.com/gbk.html')\n  .to('./demoGbk.html');\n\n// fetch a gbk-encoded html page and save it and do sth in the callback\ngbk\n  .fetch('http://doabc.com/gbk.html')\n  .to('./demoGbk.html', function(err, dist) {\n    if (!err) \n      // do sth when it has been saved(gbk-encoded)\n});\n\n// fetch a gbk-encoded html page and get a utf-8 string\ngbk\n  .fetch('http://abc.com/gbk.html')\n  .to('string', function(err,string){\n    if (!err) \n      // do sth width utf-8 encoded string\n});\n```\nLow level methods: from gbkBuffer\n\ne.g: `request({url: 'xxx.gbk.html', encoding:null })` will callback with a buffer\n\n```javascript\n// got an uft-8 string:\nvar utf8String = gbk.toString('utf-8', gbkBuffer);\n\n// make another GBK buffer:\nvar anotherGbkBuffer = gbk.toBuffer('gbk', utf8String);\n\n// save a buffer\nfs.writeFile('xxx.html',anotherGbkBuffer,function(err){\n  if (err) \n    return throw err;\n\n  console.log('original gbk file saved!')\n});\n```\n### Run example\n\n```bash\n$ git clone https://github.com/turingou/gbk.git && cd gbk\n$ node ./demo/demo.js\n```\n\n### API\nCheck this file: `index.js`\n\n### Contributing\n- Fork this repo\n- Clone your repo\n- Install dependencies\n- Checkout a feature branch\n- Feel free to add your features\n- Make sure your features are fully tested\n- Open a pull request, and enjoy <3\n\n### MIT license\nCopyright (c) 2014 turing &lt;o.u.turing@gmail.com&gt;\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the &quot;Software&quot;), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n\n---\n![docor](https://cdn1.iconfinder.com/data/icons/windows8_icons_iconpharm/26/doctor.png)\nbuilt upon love by [docor](https://github.com/turingou/docor.git) v0.1.2",
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/turingou/gbk#readme",
+  "_id": "gbk@0.1.0",
+  "_shasum": "6ceec3212bf50eaa4703601674c12b236ff7019b",
+  "_from": "git+https://github.com/vbuyakov/gbk.git",
+  "_resolved": "git+https://github.com/vbuyakov/gbk.git#a8a1a03123522bc689b10fb7fc939b3a5a92eff0"
 }

@@ -28,14 +28,20 @@ gbk
       // do sth when it has been saved(gbk-encoded)
 });
 
-// fetch a gbk-encoded html page and get a utf-8 string
+
+// fetch a gbk-encoded html page and get a utf-8 string with full responce object
+
 gbk
   .fetch('http://abc.com/gbk.html')
-  .to('string', function(err,string){
-    if (!err) 
+  .to('response', function(err,response){
+    if (!err)
+    console.log(response.body);
+    console.log(response.headers);
+    console.log(response.statusCode);
       // do sth width utf-8 encoded string
 });
 ```
+
 Low level methods: from gbkBuffer
 
 e.g: `request({url: 'xxx.gbk.html', encoding:null })` will callback with a buffer
