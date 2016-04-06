@@ -40,6 +40,22 @@ gbk
     console.log(response.statusCode);
       // do sth width utf-8 encoded string
 });
+
+// fetch a gbk-encoded html page with special headers
+var  headers ={
+            referer: 'http://abc.com/home.htmls'
+        }
+
+gbk
+  .fetch('http://abc.com/gbk.html',null, header)
+  .to('response', function(err,response){
+    if (!err)
+    console.log(response.body);
+    console.log(response.headers);
+    console.log(response.statusCode);
+      // do sth width utf-8 encoded string
+});
+
 ```
 
 Low level methods: from gbkBuffer
